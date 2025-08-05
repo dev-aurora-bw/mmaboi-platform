@@ -1,133 +1,36 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Header } from '@/components/common/Header';
-import { Footer } from '@/components/common/Footer';
-import { CheckCircle, Shield, Users, Heart } from 'lucide-react';
 
 export default function Home() {
-  const features = [
-    {
-      icon: <Shield className="h-10 w-10 text-primary" />,
-      title: 'AI Vulnerability Assessment',
-      description: 'Our AI-powered tool provides an instant vulnerability score to quickly identify needs and streamline support.',
-      link: '/assessment',
-      linkText: 'Assess Now',
-    },
-    {
-      icon: <Users className="h-10 w-10 text-primary" />,
-      title: 'Support Directory',
-      description: 'Access a national directory of support organizations, filtered by specific needs and location.',
-      link: '/support-directory',
-      linkText: 'Find Help',
-    },
-    {
-      icon: <Heart className="h-10 w-10 text-primary" />,
-      title: 'Donation Campaigns',
-      description: 'Support verified individuals by contributing to donation campaigns for specific, urgent needs.',
-      link: '/campaigns',
-      linkText: 'Donate Now',
-    },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        <section className="bg-background py-20 md:py-32">
+        <section className="bg-primary text-primary-foreground py-20 md:py-32">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 font-headline uppercase">
-              Connecting Support with Need
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4 font-headline">
+              Hi! We are MmaBoi.
             </h1>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted-foreground mb-8">
-              MmaBoi is a revolutionary platform using AI to assess vulnerability and connect individuals with a national network of support organizations and community donors.
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/80 mb-8">
+              MmaBoi pools ecosystem resources and data to improve access to social assistance services through data driven innovation.
             </p>
-            <div className="flex justify-center gap-4">
-              <Button asChild size="lg">
-                <Link href="/register">Get Help</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/support-directory">Offer Support</Link>
-              </Button>
+            <div className="flex justify-center mb-12">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M4 14.5A3.5 3.5 0 0 1 7.5 11H10c.55 0 1-.45 1-1V9c0-1.1-.9-2-2-2H4.5a2.5 2.5 0 0 0 0 5z"/><path d="M20 14.5a3.5 3.5 0 0 0-3.5-3.5H14c-.55 0-1-.45-1-1V9c0-1.1.9-2 2-2h4.5a2.5 2.5 0 1 1 0 5z"/><path d="M11.23 21.62c.4-1.2.3-2.52-.25-3.62-1.35-2.65-3.48-4-5.98-4-1.63 0-3.2.53-4.58 1.42"/><path d="M12.77 21.62c-.4-1.2-.3-2.52.25-3.62 1.35-2.65 3.48-4 5.98-4 1.63 0 3.2.53 4.58 1.42"/><path d="M12.5 6.42c.42-.42.63-1.05.5-1.62-.25-1.1-1.35-2-2.5-2s-2.25.9-2.5 2c-.13.57.08 1.2.5 1.62"/><path d="m11.5 8.5 1-1 1 1"/><path d="M16.5 6.42c.42-.42.63-1.05.5-1.62-.25-1.1-1.35-2-2.5-2s-2.25.9-2.5 2c-.13.57.08 1.2.5 1.62"/><path d="m15.5 8.5 1-1 1 1"/><path d="M7.5 6.42c.42-.42.63-1.05.5-1.62C7.75 3.7 6.65 2.8 5.5 2.8s-2.25.9-2.5 2c-.13.57.08 1.2.5 1.62"/><path d="m6.5 8.5 1-1 1 1"/></svg>
             </div>
-          </div>
-        </section>
-
-        <section id="features" className="py-16 md:py-24 bg-muted/50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold font-headline">How MmaBoi Works</h2>
-              <p className="max-w-2xl mx-auto text-muted-foreground mt-4">
-                A simple, dignified, and effective way to get or give support.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <Card key={index} className="text-center flex flex-col">
-                  <CardHeader className="items-center">
-                    {feature.icon}
-                    <CardTitle className="mt-4 font-headline">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow flex flex-col justify-between">
-                    <p className="text-muted-foreground">{feature.description}</p>
-                    <Button asChild variant="link" className="mt-4 text-primary">
-                      <Link href={feature.link}>{feature.linkText} &rarr;</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <Image
-                  src="https://placehold.co/600x400.png"
-                  alt="Community Support"
-                  width={600}
-                  height={400}
-                  className="rounded-2xl shadow-md"
-                  data-ai-hint="community support"
-                />
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="text-center">
+                 <h2 className="text-3xl font-bold font-headline mb-4">Mission</h2>
+                 <p className="text-primary-foreground/80">We are on a mission to use emerging technologies and data to provide social security and social justice to vulnerable Africans.</p>
               </div>
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">For Agents & Service Providers</h2>
-                <p className="text-muted-foreground mb-6">
-                  Streamline your operations with our powerful dashboard. Manage vulnerability data, onboard your social programs, and track your impact efficiently.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 shrink-0" />
-                    <span>
-                      <strong className="block">Efficient Data Management:</strong> Securely collect and manage client data in one place.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 shrink-0" />
-                    <span>
-                      <strong className="block">Digital Program Onboarding:</strong> Easily list and manage your support programs for greater visibility.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 shrink-0" />
-                    <span>
-                      <strong className="block">Role-Based Access:</strong> Secure access for Admins, Agents, and Providers to protect sensitive information.
-                    </span>
-                  </li>
-                </ul>
-                <Button asChild size="lg" className="mt-8">
-                  <Link href="/dashboard">Go to Dashboard</Link>
-                </Button>
+               <div className="text-center">
+                 <h2 className="text-3xl font-bold font-headline mb-4">Vision</h2>
+                 <p className="text-primary-foreground/80">We want to live in an Africa where no vulnerable person is left behind in the continent's development.</p>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

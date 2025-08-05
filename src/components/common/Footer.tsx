@@ -8,7 +8,6 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-2 mb-4 md:mb-0">
             <Logo />
-            <span className="font-bold text-lg font-headline">MmaBoi</span>
           </div>
           <nav className="flex gap-6 flex-wrap justify-center mb-4 md:mb-0">
             <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground">About Us</Link>

@@ -5,33 +5,31 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 
 const navLinks = [
-  { href: '/assessment', label: 'Assessment' },
-  { href: '/support-directory', label: 'Support Directory' },
-  { href: '/campaigns', label: 'Campaigns' },
-  { href: '/dashboard', label: 'Dashboard' },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About Us' },
+  { href: '/support-directory', label: 'Directory' },
 ];
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
           <Logo />
-          <span className="font-bold text-lg font-headline">MmaBoi</span>
         </Link>
-        {/* <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
               {link.label}
             </Link>
           ))}
-        </nav> */}
+        </nav>
         <div className="hidden md:flex items-center gap-2">
-          <Button asChild variant="ghost">
-            <Link href="/login">Log In</Link>
+          <Button asChild variant="outline">
+            <Link href="/register">Get assistance</Link>
           </Button>
           <Button asChild>
-            <Link href="/register">Register</Link>
+            <Link href="/dashboard/programs">List services</Link>
           </Button>
         </div>
         <div className="md:hidden">
@@ -46,21 +44,20 @@ export function Header() {
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2">
                   <Logo />
-                  <span className="font-bold text-lg font-headline">MmaBoi</span>
                 </Link>
-                {/* <nav className="flex flex-col gap-4">
+                <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
                     <Link key={link.href} href={link.href} className="text-lg font-medium">
                       {link.label}
                     </Link>
                   ))}
-                </nav> */}
+                </nav>
                 <div className="flex flex-col gap-2">
-                   <Button asChild variant="ghost">
-                    <Link href="/login">Log In</Link>
+                   <Button asChild variant="outline">
+                    <Link href="/register">Get assistance</Link>
                   </Button>
                   <Button asChild>
-                    <Link href="/register">Register</Link>
+                    <Link href="/dashboard/programs">List services</Link>
                   </Button>
                 </div>
               </div>
