@@ -22,8 +22,8 @@ type Provider = {
 export function ProviderCard({ provider }: { provider: Provider }) {
   return (
     <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
-      <CardContent className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-        <div className="flex flex-col items-center justify-center text-center col-span-1 md:border-r md:pr-6 space-y-4">
+      <CardContent className="p-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="flex flex-col items-center justify-start text-center col-span-1 md:border-r md:pr-6 space-y-4">
           <Image
             src={provider.logo}
             alt={`${provider.name} logo`}
@@ -43,7 +43,7 @@ export function ProviderCard({ provider }: { provider: Provider }) {
             </div>
           </div>
         </div>
-        <div className="col-span-2 space-y-4">
+        <div className="col-span-1 md:col-span-2 space-y-4">
             <div>
                 <h3 className="text-2xl font-bold font-headline mb-1">{provider.name}</h3>
                 <p className="text-sm text-muted-foreground">{provider.address}</p>

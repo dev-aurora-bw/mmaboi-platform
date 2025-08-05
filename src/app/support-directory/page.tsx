@@ -84,7 +84,7 @@ export default function SupportDirectoryPage() {
       <Header />
       <main className="flex-grow">
         <div className="container mx-auto px-4 py-12 md:py-16">
-          <div className="text-left mb-12">
+          <div className="text-center md:text-left mb-12">
             <h1 className="text-3xl md:text-4xl font-bold font-headline">Service Providers Directory</h1>
           </div>
 
