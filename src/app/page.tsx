@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Header } from '@/components/common/Header';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
+import { Footer } from '@/components/common/Footer';
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">We Are Solving A Complex Social Challenge</h2>
-              <p className="text-xl text-muted-foreground mt-2">The Status Quo Unsustainable</p>
+              <p className="text-xl text-muted-foreground mt-2">The Status Quo is Unsustainable</p>
             </div>
             <div className="grid md:grid-cols-2 items-center gap-12">
               <div>
@@ -58,7 +59,7 @@ export default function Home() {
                 <ChevronRight className="w-12 h-12 text-primary ml-8" />
               </div>
             </div>
-             <p className="text-xs text-muted-foreground mt-4 text-center">*Source: WOMIN, last updated on September mm</p>
+             <p className="text-xs text-muted-foreground mt-4 text-center">*Source: WOMIN, last updated on September 2023</p>
           </div>
         </section>
 
@@ -169,7 +170,42 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="bg-primary text-primary-foreground py-20 md:py-32">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold font-headline mb-2">MVP Development Team</h2>
+            <p className="text-lg text-primary-foreground/80 mb-8">Multi-disciplinary Team</p>
+            <p className="max-w-4xl mx-auto mb-12">Our solution is developed by a talented multi-disciplinary team with a combined experience of 40 years. The team comprises diverse fields: Economics, Finance, Engineering, and Law professions.</p>
+            <Image src="https://placehold.co/1200x600.png" alt="MVP Development Team" width={1200} height={600} className="rounded-lg shadow-lg" data-ai-hint="team photo" />
+          </div>
+        </section>
+        
+        <section className="py-20 md:py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">MVP Validation & Piloting</h2>
+            </div>
+            <div className="grid md:grid-cols-2 items-center gap-12">
+              <div className="space-y-6">
+                <p className="text-lg text-muted-foreground">We piloted MmaBoi with Masiela Trust Fund for the management of their child protection programmes. We digitised the NGOs application forms and part of their processes. We are now the Trust's technology partner in leveraging technology to address children's vulnerability and poverty in Botswana.</p>
+              </div>
+              <div className="flex justify-center items-center gap-8">
+                <Image src="https://placehold.co/200x200.png" alt="Masiela Trust Fund Logo" width={200} height={200} className="rounded-lg shadow-md bg-white p-2" data-ai-hint="trust fund logo" />
+                <Image src="https://placehold.co/200x200.png" alt="Ministry of Local Government Logo" width={200} height={200} className="rounded-lg shadow-md bg-white p-2" data-ai-hint="government logo" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-muted py-20 md:py-32">
+            <div className="container mx-auto px-4 text-center">
+                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">Finding A Sustainable Solution</h2>
+                <p className="max-w-4xl mx-auto text-muted-foreground text-lg">In testing MmaBoi with Masiela Trust Fund we learnt a lot about the problem we are solving. Social Protecting is a complex multi-dimension problem with many service providers outside government. The challenges many face are perpetuated by the use of manual and paper-based processes which robs service providers and policy makers of opportunities to use data for M&E and continuous improvement. We strongly believe that a sustainable solution can be found by pooling ecosystem resources, data, and funds to address social vulnerabilities.</p>
+            </div>
+        </section>
+
+
       </main>
+      <Footer />
     </div>
   );
 }

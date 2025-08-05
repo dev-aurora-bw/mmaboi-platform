@@ -1,24 +1,39 @@
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Logo } from '@/components/icons/Logo';
 
 export function Footer() {
   return (
-    <footer className="bg-muted/50 border-t">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center gap-2 mb-4 md:mb-0">
+    <footer className="bg-primary text-primary-foreground">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid md:grid-cols-3 gap-12">
+          <div>
             <Logo />
+            <p className="mt-4 text-primary-foreground/80">
+              We are on a mission to use emerging technologies and data to provide social security and social justice to vulnerable Africans.
+            </p>
           </div>
-          <nav className="flex gap-6 flex-wrap justify-center mb-4 md:mb-0">
-            <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground">About Us</Link>
-            <Link href="/support-directory" className="text-sm text-muted-foreground hover:text-foreground">Directory</Link>
-            <Link href="/campaigns" className="text-sm text-muted-foreground hover:text-foreground">Campaigns</Link>
-            <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground">Contact</Link>
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">Privacy Policy</Link>
-          </nav>
+          <div>
+            <h3 className="font-bold font-headline text-lg mb-4">Quick Links</h3>
+            <nav className="flex flex-col gap-2">
+              <Link href="/about" className="text-sm text-primary-foreground/80 hover:text-white">About Us</Link>
+              <Link href="/support-directory" className="text-sm text-primary-foreground/80 hover:text-white">Directory</Link>
+              <Link href="/campaigns" className="text-sm text-primary-foreground/80 hover:text-white">Campaigns</Link>
+              <Link href="/contact" className="text-sm text-primary-foreground/80 hover:text-white">Contact</Link>
+            </nav>
+          </div>
+          <div>
+            <h3 className="font-bold font-headline text-lg mb-4">Newsletter</h3>
+            <p className="text-primary-foreground/80 mb-4">Subscribe to our newsletter for the latest updates.</p>
+            <div className="flex gap-2">
+              <Input type="email" placeholder="Your email address" className="bg-primary-foreground/10 border-primary-foreground/20 placeholder:text-primary-foreground/50 text-white" />
+              <Button type="submit" variant="secondary" className="bg-accent text-accent-foreground hover:bg-accent/90">Subscribe</Button>
+            </div>
+          </div>
         </div>
-        <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} MmaBoi. All Rights Reserved.</p>
+        <div className="mt-12 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/60">
+          <p>&copy; {new Date().getFullYear()} MmaBoi. All Rights Reserved. <Link href="/privacy" className="underline">Privacy Policy</Link></p>
         </div>
       </div>
     </footer>
