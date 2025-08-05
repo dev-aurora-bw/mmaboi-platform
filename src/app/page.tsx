@@ -86,8 +86,86 @@ export default function Home() {
         </section>
 
         <section className="py-20 md:py-32">
-          <div className="container mx-auto px-4 text-center">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Our MVP Exceeded Funding Expectations</h2>
+            </div>
+            <div className="relative">
+              {/* Vertical line */}
+              <div className="hidden md:block absolute left-1/2 -ml-px w-0.5 h-full bg-border" aria-hidden="true"></div>
+
+              <div className="space-y-16">
+                {/* Universal Registration */}
+                <div className="relative">
+                  <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <div className="md:pr-8">
+                      <Image src="https://placehold.co/500x350.png" alt="Universal Registration" width={500} height={350} className="rounded-lg shadow-lg" data-ai-hint="mobile registration" />
+                    </div>
+                    <div className="mt-8 md:mt-0">
+                      <h3 className="text-2xl font-bold font-headline text-primary mb-2">Universal Registration</h3>
+                      <p className="text-muted-foreground">Our solution allows vulnerable people to register their needs using USSD, Facebook, WhatsApp, Mobile and Web Apps - eliminating the use of paper forms. Social workers can also register vulnerable individuals via a Web platform.</p>
+                    </div>
+                  </div>
+                  <div className="hidden md:flex absolute top-1/2 -mt-4 left-1/2 -ml-4 w-8 h-8 rounded-full bg-primary border-4 border-background justify-center items-center"></div>
+                </div>
+
+                {/* Assessment */}
+                <div className="relative">
+                  <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <div className="md:pl-8 md:order-2">
+                       <Image src="https://placehold.co/500x350.png" alt="Assessment" width={500} height={350} className="rounded-lg shadow-lg" data-ai-hint="assessment dashboard" />
+                    </div>
+                    <div className="mt-8 md:mt-0 md:order-1 md:text-right">
+                       <h3 className="text-2xl font-bold font-headline text-primary mb-2">Assessment</h3>
+                       <p className="text-muted-foreground">The social workers would get a notification when a new application has been submitted. They could then assess and classify the case based on its severity and seek additional information to support the application.</p>
+                    </div>
+                  </div>
+                   <div className="hidden md:flex absolute top-1/2 -mt-4 left-1/2 -ml-4 w-8 h-8 rounded-full bg-primary border-4 border-background justify-center items-center"></div>
+                </div>
+
+                {/* Onboarding */}
+                <div className="relative">
+                  <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <div className="md:pr-8">
+                       <Image src="https://placehold.co/500x350.png" alt="Onboarding" width={500} height={350} className="rounded-lg shadow-lg" data-ai-hint="onboarding process" />
+                    </div>
+                    <div className="mt-8 md:mt-0">
+                       <h3 className="text-2xl font-bold font-headline text-primary mb-2">Onboarding</h3>
+                       <p className="text-muted-foreground">Approved application would be on-boarded to the best programme. Our solution can cut the application-assessment-onboarding process from weeks to hours saving significant amount of time and resources. This means more vulnerable people can be assisted in a matter of hours.</p>
+                    </div>
+                  </div>
+                   <div className="hidden md:flex absolute top-1/2 -mt-4 left-1/2 -ml-4 w-8 h-8 rounded-full bg-primary border-4 border-background justify-center items-center"></div>
+                </div>
+                
+                {/* Dashboards */}
+                 <div className="relative">
+                  <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <div className="md:pl-8 md:order-2">
+                        <Image src="https://placehold.co/500x350.png" alt="Dashboards" width={500} height={350} className="rounded-lg shadow-lg" data-ai-hint="analytics dashboard" />
+                    </div>
+                    <div className="mt-8 md:mt-0 md:order-1 md:text-right">
+                      <h3 className="text-2xl font-bold font-headline text-primary mb-2">Dashboards</h3>
+                      <p className="text-muted-foreground">Social Workers and Programme Administrators have access to a programme dashboard tracking process and programme the KPIs in real time.</p>
+                    </div>
+                  </div>
+                   <div className="hidden md:flex absolute top-1/2 -mt-4 left-1/2 -ml-4 w-8 h-8 rounded-full bg-primary border-4 border-background justify-center items-center"></div>
+                </div>
+
+                {/* Alerts & Notifications */}
+                 <div className="relative">
+                  <div className="md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <div className="md:pr-8">
+                       <Image src="https://placehold.co/500x350.png" alt="Alerts & Notifications" width={500} height={350} className="rounded-lg shadow-lg" data-ai-hint="mobile notifications" />
+                    </div>
+                    <div className="mt-8 md:mt-0">
+                       <h3 className="text-2xl font-bold font-headline text-primary mb-2">Alerts & Notifications</h3>
+                       <p className="text-muted-foreground">As the application went through different stages, vulnerable people get SMS notifications informing them about the status of their application and requests for additional information.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </section>
 
