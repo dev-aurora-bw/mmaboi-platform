@@ -4,6 +4,8 @@ import { Header } from '@/components/common/Header';
 import Image from 'next/image';
 import { ChevronRight } from 'lucide-react';
 import { Footer } from '@/components/common/Footer';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function Home() {
   return (
@@ -196,13 +198,69 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-muted py-20 md:py-32">
+        <section className="bg-primary text-primary-foreground py-20 md:py-32">
             <div className="container mx-auto px-4 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">Finding A Sustainable Solution</h2>
-                <p className="max-w-4xl mx-auto text-muted-foreground text-lg">In testing MmaBoi with Masiela Trust Fund we learnt a lot about the problem we are solving. Social Protecting is a complex multi-dimension problem with many service providers outside government. The challenges many face are perpetuated by the use of manual and paper-based processes which robs service providers and policy makers of opportunities to use data for M&E and continuous improvement. We strongly believe that a sustainable solution can be found by pooling ecosystem resources, data, and funds to address social vulnerabilities.</p>
+                <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">Finding a Sustainable Solution</h2>
+                <p className="max-w-4xl mx-auto text-primary-foreground/80 mb-12">
+                  In testing MmaBoi with Masiela Trust Fund we learnt a lot about the problem we are solving. Social Protecting is a complex multi-dimension problem with many service providers outside government. The challenges many face are perpetuated by the use of manual and paper-based processes which robs service providers and policy makers of opportunities to use data for M&E and continuous improvement. We strongly believe that a sustainable solution can be found by pooling ecosystem resources, data, and funds to address social vulnerabilities.
+                </p>
+                <Image src="https://placehold.co/800x600.png" alt="Social Assistance Platform Diagram" width={800} height={600} className="rounded-lg shadow-lg mx-auto" data-ai-hint="platform diagram" />
             </div>
         </section>
 
+        <section className="py-20 md:py-32">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary mb-4">Our Unique Value Proposition</h2>
+            <p className="max-w-4xl mx-auto text-muted-foreground text-lg mb-12">
+              Social Protection is a complex social challenge that requires a systemic approach to create a sustainable high impact solution. We pool ecosystem resources, data, and funds to match vulnerabilities to social assistance service providers and service providers to funders. We are building a platform to enable everyone in the social assistance value chain.
+            </p>
+
+            <h3 className="text-2xl md:text-3xl font-bold font-headline text-primary mb-4">Our Project Enablers & Collaborators</h3>
+            <p className="max-w-4xl mx-auto text-muted-foreground text-lg mb-12">
+              MmaBoi is a digital social protection delivery platform that aims to change the current narrative on social welfare innovation hence we have deep collaborations with key actors in the space.
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-8">
+              <Image src="https://placehold.co/150x75.png" alt="Botswana Government Logo" width={150} height={75} className="object-contain" data-ai-hint="government logo" />
+              <Image src="https://placehold.co/150x75.png" alt="Botswana Coat of Arms" width={150} height={75} className="object-contain" data-ai-hint="government logo" />
+              <Image src="https://placehold.co/150x75.png" alt="BQA Logo" width={150} height={75} className="object-contain" data-ai-hint="education logo" />
+              <Image src="https://placehold.co/150x75.png" alt="Stanbic Bank Logo" width={150} height={75} className="object-contain" data-ai-hint="bank logo" />
+              <Image src="https://placehold.co/150x75.png" alt="Masiela Trust Fund Logo" width={150} height={75} className="object-contain" data-ai-hint="trust fund logo" />
+              <Image src="https://placehold.co/150x75.png" alt="Microsoft for Startups Logo" width={150} height={75} className="object-contain" data-ai-hint="microsoft logo" />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-primary text-primary-foreground py-20 md:py-32">
+            <div className="container mx-auto px-4">
+              <div className="grid md:grid-cols-2 gap-16 items-center">
+                  <div className="text-center md:text-left">
+                      <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">Co-Create With Us</h2>
+                      <p className="text-primary-foreground/80 mb-8 max-w-md">We are looking to partner and collaborate with all the actors in the delivery of social protection services.</p>
+                      <form className="space-y-4">
+                          <div className="grid md:grid-cols-2 gap-4">
+                              <Input type="text" placeholder="Name" className="bg-primary-foreground/10 border-primary-foreground/20 placeholder:text-primary-foreground/50 text-white" />
+                              <Input type="email" placeholder="Email" className="bg-primary-foreground/10 border-primary-foreground/20 placeholder:text-primary-foreground/50 text-white" />
+                          </div>
+                          <Select>
+                            <SelectTrigger className="w-full bg-primary-foreground/10 border-primary-foreground/20 placeholder:text-primary-foreground/50 text-white">
+                                <SelectValue placeholder="How would you like to participate?" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="partner">Partner with us</SelectItem>
+                                <SelectItem value="invest">Invest in our mission</SelectItem>
+                                <SelectItem value="volunteer">Volunteer your time</SelectItem>
+                                <SelectItem value="other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <Button type="submit" variant="secondary" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Submit</Button>
+                      </form>
+                  </div>
+                  <div>
+                    <Image src="https://placehold.co/500x400.png" alt="People collaborating" width={500} height={400} className="rounded-lg shadow-lg" data-ai-hint="people community" />
+                  </div>
+              </div>
+            </div>
+        </section>
 
       </main>
       <Footer />
