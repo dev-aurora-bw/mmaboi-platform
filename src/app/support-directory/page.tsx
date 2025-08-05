@@ -66,11 +66,154 @@ const organizations = [
       logo: 'https://placehold.co/100x100.png',
       logoHint: 'foundation logo'
     },
+    {
+      id: '5',
+      name: 'Gaborone City Council Social Services',
+      address: 'Civic Centre, Gaborone',
+      description: 'Provides social welfare services to the residents of Gaborone.',
+      services: ['Social Support', 'Community Development', 'Counseling'],
+      contactInfo: { phone: '+267 365 7400' },
+      openingHours: 'Open: 0730 - 1630 (M-F)',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'government building'
+    },
+    {
+      id: '6',
+      name: 'Botswana Red Cross Society',
+      address: 'Plot 22, Independence Avenue, Gaborone',
+      description: 'Humanitarian organization providing disaster relief and health services.',
+      services: ['Emergency Response', 'First Aid Training', 'Health Awareness'],
+      contactInfo: { phone: '+267 395 2465' },
+      openingHours: 'Open: 0800 - 1700 (M-F)',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'red cross logo'
+    },
+    {
+      id: '7',
+      name: 'Stepping Stones International',
+      address: 'Mochudi',
+      description: 'Empowering vulnerable youth through leadership, life skills, and psychosocial support.',
+      services: ['Youth Development', 'Education Support', 'Life Skills'],
+      contactInfo: { phone: '+267 577 7321' },
+      openingHours: 'Open: 0800 - 1700 (M-F)',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'stepping stones'
+    },
+    {
+      id: '8',
+      name: 'Youth Health Organization (YOHO)',
+      address: 'Plot 5036, Gaborone',
+      description: 'Dedicated to providing youth-friendly health services and education.',
+      services: ['Health Education', 'SRH Services', 'Peer Support'],
+      contactInfo: { phone: '+267 393 7078' },
+      openingHours: 'Open: 0900 - 1800 (M-F)',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'youth health'
+    },
+    {
+      id: '9',
+      name: 'Childline Botswana',
+      address: 'Plot 273, Gaborone',
+      description: 'Provides a free, confidential helpline and support services for children in need.',
+      services: ['Child Protection', 'Counseling Helpline', 'Advocacy'],
+      contactInfo: { phone: '116 (Toll-Free)' },
+      openingHours: 'Open: 24/7',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'child on phone'
+    },
+    {
+      id: '10',
+      name: 'Botswana Council of NGOs (BOCONGO)',
+      address: 'Plot 232, Gaborone',
+      description: 'An umbrella body for non-governmental organizations in Botswana.',
+      services: ['Advocacy', 'Capacity Building', 'Networking'],
+      contactInfo: { phone: '+267 391 1319' },
+      openingHours: 'Open: 0800 - 1700 (M-F)',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'community logo'
+    },
+    {
+      id: '11',
+      name: 'Lifeline Botswana',
+      address: 'Plot 888, Gaborone',
+      description: 'Offers emotional support and counseling services to those in crisis.',
+      services: ['Crisis Counseling', 'Mental Health Support', 'Suicide Prevention'],
+      contactInfo: { phone: '+267 391 1290' },
+      openingHours: 'Open: 24/7',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'lifeline logo'
+    },
+    {
+      id: '12',
+      name: 'BONELA',
+      address: 'Plot 245, Gaborone',
+      description: 'Promoting a human rights-based response to HIV/AIDS.',
+      services: ['Human Rights', 'Legal Aid', 'HIV/AIDS Advocacy'],
+      contactInfo: { phone: '+267 393 2516' },
+      openingHours: 'Open: 0800 - 1630 (M-F)',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'legal scale'
+    },
+    {
+      id: '13',
+      name: 'Holy Trinity Community Clinic',
+      address: 'Plot 999, Ramotswa',
+      description: 'Faith-based clinic providing accessible healthcare to the community.',
+      services: ['Primary Healthcare', 'Maternal Health', 'HIV/TB Care'],
+      contactInfo: { phone: '+267 539 0234' },
+      openingHours: 'Open: 0800 - 1700 (M-F)',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'church cross'
+    },
+    {
+      id: '14',
+      name: 'Stanbic Bank Foundation',
+      address: 'Fairgrounds, Gaborone',
+      description: 'Corporate foundation focused on health, education, and entrepreneurship.',
+      services: ['Education Grants', 'Health Initiatives', 'Enterprise Development'],
+      contactInfo: { phone: '+267 361 8555' },
+      openingHours: 'Corporate Hours',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'bank logo'
+    },
+    {
+      id: '15',
+      name: 'Orange Foundation Botswana',
+      address: 'Peo House, Gaborone',
+      description: 'Corporate foundation supporting digital education and maternal health.',
+      services: ['Digital Inclusion', 'Education', 'Maternal Health'],
+      contactInfo: { phone: '+267 316 3370' },
+      openingHours: 'Corporate Hours',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'telecom logo'
+    },
+    {
+      id: '16',
+      name: 'Debswana Social Investment Fund',
+      address: 'Debswana House, Gaborone',
+      description: 'Investing in community development projects across Botswana.',
+      services: ['Community Projects', 'Infrastructure', 'Sustainability'],
+      contactInfo: { phone: '+267 361 4200' },
+      openingHours: 'Corporate Hours',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'diamond logo'
+    },
+    {
+      id: '17',
+      name: 'Ministry of Health & Wellness',
+      address: 'Government Enclave, Gaborone',
+      description: 'Government body responsible for public health services and policy.',
+      services: ['Public Health', 'Hospitals & Clinics', 'Health Policy'],
+      contactInfo: { phone: '+267 363 2000' },
+      openingHours: 'Open: 0730 - 1630 (M-F)',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'government crest'
+    },
 ];
 
 export default function SupportDirectoryPage() {
     const [currentPage, setCurrentPage] = useState(1);
-    const organizationsPerPage = 4;
+    const organizationsPerPage = 10;
     const totalPages = Math.ceil(organizations.length / organizationsPerPage);
 
     const paginatedOrganizations = organizations.slice(
