@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/common/Header';
+import Image from 'next/image';
+import { ChevronRight } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -30,6 +32,65 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="py-20 md:py-32">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">We Are Solving A Complex Social Challenge</h2>
+              <p className="text-xl text-muted-foreground mt-2">The Status Quo Unsustainable</p>
+            </div>
+            <div className="grid md:grid-cols-2 items-center gap-12">
+              <div>
+                <Image src="https://placehold.co/600x400.png" alt="Map of Africa" width={600} height={400} className="rounded-lg shadow-lg" data-ai-hint="map africa" />
+              </div>
+              <div className="flex items-center">
+                <div className="space-y-8">
+                  <p className="text-lg font-medium">The numbers do not lie about Africa's dire situation.</p>
+                  <div>
+                    <p className="text-5xl font-bold text-primary">730 million</p>
+                    <p className="text-muted-foreground">Africans need Social Protection.</p>
+                  </div>
+                  <div>
+                    <p className="text-5xl font-bold text-primary">17.4%</p>
+                    <p className="text-muted-foreground">have cover compared to the global average of <span className="font-semibold">46.9%</span></p>
+                  </div>
+                </div>
+                <ChevronRight className="w-12 h-12 text-primary ml-8" />
+              </div>
+            </div>
+             <p className="text-xs text-muted-foreground mt-4 text-center">*Source: WOMIN, last updated on September mm</p>
+          </div>
+        </section>
+
+        <section className="bg-primary text-primary-foreground py-20 md:py-32">
+          <div className="container mx-auto px-4">
+             <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline">Covid-19 Inspiration</h2>
+            </div>
+            <div className="grid md:grid-cols-2 items-center gap-16">
+              <div className="space-y-8">
+                <p>MmaBoi is one of the 5 out of 190 projects funded by Government of Botswana to address Covid-19 community challenges by digitising the food relief delivery process.</p>
+                <blockquote className="border-l-4 border-accent pl-4 italic text-accent text-lg">
+                  "...The covid-19 pandemic has exposed deep seated inequalities and significant gaps in social protection everywhere..." ILO
+                </blockquote>
+                 <div className="flex items-center gap-8">
+                   <Image src="https://placehold.co/200x200.png" alt="Stressed person" width={200} height={200} className="rounded-full" data-ai-hint="woman thinking" />
+                   <p className="text-primary-foreground/80">The use of manual and paper-based processes during Covid-19 led to low community visibility, long turnaround times, low efficiencies, and limited intervention effectiveness in delivering social protective services in Botswana.</p>
+                 </div>
+              </div>
+              <div>
+                 <Image src="https://placehold.co/400x400.png" alt="Botswana and NOTE logos" width={400} height={400} className="rounded-lg shadow-lg bg-white p-4" data-ai-hint="logo collage" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-32">
+          <div className="container mx-auto px-4 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary">Our MVP Exceeded Funding Expectations</h2>
+          </div>
+        </section>
+
       </main>
     </div>
   );
