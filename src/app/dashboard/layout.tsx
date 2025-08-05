@@ -11,6 +11,8 @@ import {
   SidebarInset,
   SidebarTrigger,
   SidebarFooter,
+  SidebarGroup,
+  SidebarGroupLabel,
 } from "@/components/ui/sidebar"
 import { Logo } from "@/components/icons/Logo"
 import { Button } from "@/components/ui/button"
@@ -20,6 +22,10 @@ import {
   HeartHandshake,
   LogOut,
   LifeBuoy,
+  ShieldCheck,
+  UserCheck,
+  BarChart,
+  Megaphone,
 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
@@ -70,6 +76,45 @@ export default function DashboardLayout({
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
+          
+          <SidebarGroup>
+            <SidebarGroupLabel>Admin</SidebarGroupLabel>
+            <SidebarMenu>
+                <SidebarMenuItem>
+                    <SidebarMenuButton asChild tooltip={{children: "Verify Providers"}}>
+                        <Link href="/dashboard/admin/providers">
+                            <ShieldCheck />
+                            <span>Verify Providers</span>
+                        </Link>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                 <SidebarMenuItem>
+                    <SidebarMenuButton asChild tooltip={{children: "Registrations"}}>
+                        <Link href="/dashboard/admin/registrations">
+                            <UserCheck />
+                            <span>Registrations</span>
+                        </Link>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                 <SidebarMenuItem>
+                    <SidebarMenuButton asChild tooltip={{children: "Campaigns"}}>
+                        <Link href="/dashboard/admin/campaigns">
+                            <Megaphone />
+                            <span>Campaigns</span>
+                        </Link>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                <SidebarMenuItem>
+                    <SidebarMenuButton asChild tooltip={{children: "Analytics"}}>
+                        <Link href="/dashboard/admin/kpis">
+                            <BarChart />
+                            <span>Analytics</span>
+                        </Link>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroup>
+
         </SidebarContent>
         <SidebarFooter className="flex-col !items-stretch gap-2">
           <SidebarMenu>
