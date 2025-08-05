@@ -26,8 +26,17 @@ import {
   UserCheck,
   BarChart,
   Megaphone,
+  Settings,
 } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export default function DashboardLayout({
   children,
@@ -127,6 +136,14 @@ export default function DashboardLayout({
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
+              <SidebarMenuButton asChild tooltip={{ children: "Settings" }}>
+                <Link href="/dashboard/settings">
+                  <Settings />
+                  <span>Settings</span>
+                </Link>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip={{ children: "Logout" }}>
                 <Link href="/">
                   <LogOut />
@@ -135,16 +152,37 @@ export default function DashboardLayout({
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
-          <div className="flex items-center gap-3 p-2 rounded-lg bg-muted group-data-[collapsible=icon]:justify-center">
-             <Avatar className="h-8 w-8">
-              <AvatarImage src="https://placehold.co/100x100.png" alt="Admin" />
-              <AvatarFallback>AD</AvatarFallback>
-            </Avatar>
-            <div className="flex flex-col group-data-[collapsible=icon]:hidden">
-                <p className="text-sm font-semibold">Admin User</p>
-                <p className="text-xs text-muted-foreground">admin@mmaboi.org</p>
-            </div>
-          </div>
+           <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="flex items-center gap-3 p-2 rounded-lg bg-muted group-data-[collapsible=icon]:justify-center w-full text-left">
+                <Avatar className="h-8 w-8">
+                  <AvatarImage src="https://placehold.co/100x100.png" alt="Admin" />
+                  <AvatarFallback>AD</AvatarFallback>
+                </Avatar>
+                <div className="flex flex-col group-data-[collapsible=icon]:hidden">
+                    <p className="text-sm font-semibold">Admin User</p>
+                    <p className="text-xs text-muted-foreground">admin@mmaboi.org</p>
+                </div>
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56 mb-2 ml-2" side="top" align="start">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                <Link href="/dashboard/profile">Profile</Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/dashboard/settings">Settings</Link>
+              </DropdownMenuItem>
+               <DropdownMenuItem asChild>
+                <Link href="/support">Support</Link>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                 <Link href="/">Logout</Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </SidebarFooter>
       </Sidebar>
       <SidebarInset>
