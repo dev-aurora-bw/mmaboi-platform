@@ -18,11 +18,11 @@ export function Header() {
           <Logo />
         </Link>
         <nav className="hidden md:flex items-center gap-6">
-          {/* {navLinks.map((link) => (
+          {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
               {link.label}
             </Link>
-          ))} */}
+          ))}
         </nav>
         <div className="hidden md:flex items-center gap-2">
           <Button asChild variant="outline">
@@ -45,13 +45,13 @@ export function Header() {
                 <Link href="/" className="flex items-center gap-2">
                   <Logo />
                 </Link>
-                {/* <nav className="flex flex-col gap-4">
+                <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (
                     <Link key={link.href} href={link.href} className="text-lg font-medium">
                       {link.label}
                     </Link>
                   ))}
-                </nav> */}
+                </nav>
                 <div className="flex flex-col gap-2">
                    <Button asChild variant="outline">
                     <Link href="/register">Get assistance</Link>
