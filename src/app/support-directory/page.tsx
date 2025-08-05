@@ -1,3 +1,4 @@
+
 "use client"
 import { useState } from 'react';
 import Link from 'next/link';
@@ -15,93 +16,68 @@ import { ProviderCard } from '@/components/directory/ProviderCard';
 const organizations = [
     {
       id: '1',
-      name: 'Masiela Trust Fund',
-      type: 'NGO',
-      location: 'Gaborone',
-      description: 'Masiela Trust Fund is a non-governmental organization dedicated to upholding the rights of the...',
-      services: ['Orphans & Vulnerable Children', 'Education', 'Health'],
+      name: 'Botswana Family Welfare Association',
+      address: '2894+Q44, lopatlaoka road, Kanye',
+      description: 'BOFWA is a nationally recognized leader in Sexual and Reproductive Health (SRH) that ensures...',
+      services: ['Safe Abortion Care', 'Comprehensive Sexuality Education', 'Counselling', 'Gender Based Violence victims support'],
       contactInfo: {
-        phone: '+267 311 1111',
-        website: 'www.masiela.org',
+        phone: '+267 390 0489',
       },
-      logo: 'https://placehold.co/100x100.png',
-      logoHint: 'charity logo'
-    },
-    {
-      id: '2',
-      name: "SOS Children's Village",
-      type: 'NGO',
-      location: 'Gaborone',
-      description: 'SOS Children’s Villages is a non-governmental organization dedicated to upholding the rights of the...',
-      services: ['Orphans & Vulnerable Children', 'Shelter', 'Health'],
-      contactInfo: {
-        phone: '+267 312 2222',
-        website: 'www.sos-botswana.org',
-      },
-      logo: 'https://placehold.co/100x100.png',
-      logoHint: 'childrens village logo'
-    },
-     {
-      id: '3',
-      name: "Botswana Family Welfare Association",
-      type: 'NGO',
-      location: 'Gaborone',
-      description: 'Botswana Family Welfare Association is a non-governmental organization dedicated to...',
-      services: ['Health', 'Counselling', 'Family Planning'],
-      contactInfo: {
-        phone: '+267 313 3333',
-        website: 'www.bofwa.org.bw',
-      },
+      openingHours: 'Open: 0800 - 1700 (M-F), Closed on weekends',
       logo: 'https://placehold.co/100x100.png',
       logoHint: 'family association logo'
     },
     {
-      id: '4',
-      name: "Cheshire Foundation",
-      type: 'NGO',
-      location: 'Gaborone',
-      description: 'Cheshire Foundation is a non-governmental organization that cares for children...',
-      services: ['Disability Support', 'Rehabilitation', 'Health'],
-      contactInfo: {
-        phone: '+267 314 4444',
-        website: 'www.cheshire.org',
-      },
-      logo: 'https://placehold.co/100x100.png',
-      logoHint: 'foundation logo'
-    },
-     {
-      id: '5',
-      name: "SOS Children's Village",
-      type: 'NGO',
-      location: 'Gaborone',
-      description: 'SOS Children’s Villages is a non-governmental organization dedicated to upholding the rights of the...',
-      services: ['Orphans & Vulnerable Children', 'Shelter', 'Health'],
-      contactInfo: {
-        phone: '+267 312 2222',
-        website: 'www.sos-botswana.org',
-      },
-      logo: 'https://placehold.co/100x100.png',
-      logoHint: 'childrens village logo'
-    },
-     {
-      id: '6',
+      id: '2',
       name: 'Masiela Trust Fund',
-      type: 'NGO',
-      location: 'Gaborone',
+      address: 'Plot 123, Gaborone',
       description: 'Masiela Trust Fund is a non-governmental organization dedicated to upholding the rights of the...',
       services: ['Orphans & Vulnerable Children', 'Education', 'Health'],
       contactInfo: {
         phone: '+267 311 1111',
-        website: 'www.masiela.org',
       },
+      openingHours: 'Open: 0900 - 1630 (M-F), Closed on weekends',
       logo: 'https://placehold.co/100x100.png',
       logoHint: 'charity logo'
+    },
+     {
+      id: '3',
+      name: "SOS Children's Village",
+      address: 'Plot 456, Tlokweng',
+      description: 'SOS Children’s Villages is a non-governmental organization dedicated to upholding the rights of the...',
+      services: ['Orphans & Vulnerable Children', 'Shelter', 'Health'],
+      contactInfo: {
+        phone: '+267 312 2222',
+      },
+      openingHours: 'Open: 0800 - 1700 (M-F), Closed on weekends',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'childrens village logo'
+    },
+    {
+      id: '4',
+      name: "Cheshire Foundation",
+      address: 'Plot 789, Mogoditshane',
+      description: 'Cheshire Foundation is a non-governmental organization that cares for children...',
+      services: ['Disability Support', 'Rehabilitation', 'Health'],
+      contactInfo: {
+        phone: '+267 314 4444',
+      },
+      openingHours: 'Open: 0830 - 1600 (M-F), Closed on weekends',
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'foundation logo'
     },
 ];
 
 export default function SupportDirectoryPage() {
     const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = 5;
+    const organizationsPerPage = 4;
+    const totalPages = Math.ceil(organizations.length / organizationsPerPage);
+
+    const paginatedOrganizations = organizations.slice(
+        (currentPage - 1) * organizationsPerPage,
+        currentPage * organizationsPerPage
+    );
+
 
   return (
     <div className="flex flex-col min-h-screen bg-muted/50">
@@ -122,34 +98,36 @@ export default function SupportDirectoryPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {organizations.map((org) => (
+            {paginatedOrganizations.map((org) => (
               <ProviderCard key={org.id} provider={org} />
             ))}
           </div>
 
-          <div className="flex justify-center items-center mt-12">
-            <nav aria-label="Pagination">
-              <ul className="inline-flex items-center space-x-2">
-                <li>
-                  <Button variant="outline" size="sm" onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1}>Previous</Button>
-                </li>
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
-                    <li key={page}>
-                    <Button
-                        variant={currentPage === page ? 'default' : 'outline'}
-                        size="sm"
-                        onClick={() => setCurrentPage(page)}
-                    >
-                        {page}
-                    </Button>
-                    </li>
-                ))}
-                <li>
-                  <Button variant="outline" size="sm" onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>Next</Button>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center mt-12">
+              <nav aria-label="Pagination">
+                <ul className="inline-flex items-center space-x-2">
+                  <li>
+                    <Button variant="outline" size="sm" onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1}>Previous</Button>
+                  </li>
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                      <li key={page}>
+                      <Button
+                          variant={currentPage === page ? 'default' : 'outline'}
+                          size="sm"
+                          onClick={() => setCurrentPage(page)}
+                      >
+                          {page}
+                      </Button>
+                      </li>
+                  ))}
+                  <li>
+                    <Button variant="outline" size="sm" onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>Next</Button>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          )}
 
         </div>
       </main>
