@@ -1,3 +1,5 @@
+"use client"
+import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,107 +7,150 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Header } from '@/components/common/Header';
 import { Footer } from '@/components/common/Footer';
-import { Search, MapPin } from 'lucide-react';
+import { Search, MapPin, Phone, Globe, ArrowRight } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import Image from 'next/image';
+import { ProviderCard } from '@/components/directory/ProviderCard';
 
 const organizations = [
-  {
-    name: 'National Food Bank',
-    category: 'Food Assistance',
-    location: 'Nationwide',
-    description: 'Providing food to those in need through a network of local pantries.',
-  },
-  {
-    name: 'Shelter First',
-    category: 'Housing Support',
-    location: 'New York, NY',
-    description: 'Emergency shelter and housing assistance for homeless individuals and families.',
-  },
-  {
-    name: 'Jobs for the Future',
-    category: 'Employment',
-    location: 'Chicago, IL',
-    description: 'Offering job training, resume building, and placement services.',
-  },
-  {
-    name: 'Community Health Clinic',
-    category: 'Healthcare',
-    location: 'Los Angeles, CA',
-    description: 'Free and low-cost medical services for uninsured and underinsured residents.',
-  },
-  {
-    name: 'Parenting Support Center',
-    category: 'Childcare',
-    location: 'Houston, TX',
-    description: 'Subsidized childcare and parenting resources for low-income families.',
-  },
-  {
-    name: 'Utility Assistance Program',
-    category: 'Utilities',
-    location: 'Nationwide',
-    description: 'Helping families maintain essential utility services during financial hardship.',
-  },
+    {
+      id: '1',
+      name: 'Masiela Trust Fund',
+      type: 'NGO',
+      location: 'Gaborone',
+      description: 'Masiela Trust Fund is a non-governmental organization dedicated to upholding the rights of the...',
+      services: ['Orphans & Vulnerable Children', 'Education', 'Health'],
+      contactInfo: {
+        phone: '+267 311 1111',
+        website: 'www.masiela.org',
+      },
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'charity logo'
+    },
+    {
+      id: '2',
+      name: "SOS Children's Village",
+      type: 'NGO',
+      location: 'Gaborone',
+      description: 'SOS Children’s Villages is a non-governmental organization dedicated to upholding the rights of the...',
+      services: ['Orphans & Vulnerable Children', 'Shelter', 'Health'],
+      contactInfo: {
+        phone: '+267 312 2222',
+        website: 'www.sos-botswana.org',
+      },
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'childrens village logo'
+    },
+     {
+      id: '3',
+      name: "Botswana Family Welfare Association",
+      type: 'NGO',
+      location: 'Gaborone',
+      description: 'Botswana Family Welfare Association is a non-governmental organization dedicated to...',
+      services: ['Health', 'Counselling', 'Family Planning'],
+      contactInfo: {
+        phone: '+267 313 3333',
+        website: 'www.bofwa.org.bw',
+      },
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'family association logo'
+    },
+    {
+      id: '4',
+      name: "Cheshire Foundation",
+      type: 'NGO',
+      location: 'Gaborone',
+      description: 'Cheshire Foundation is a non-governmental organization that cares for children...',
+      services: ['Disability Support', 'Rehabilitation', 'Health'],
+      contactInfo: {
+        phone: '+267 314 4444',
+        website: 'www.cheshire.org',
+      },
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'foundation logo'
+    },
+     {
+      id: '5',
+      name: "SOS Children's Village",
+      type: 'NGO',
+      location: 'Gaborone',
+      description: 'SOS Children’s Villages is a non-governmental organization dedicated to upholding the rights of the...',
+      services: ['Orphans & Vulnerable Children', 'Shelter', 'Health'],
+      contactInfo: {
+        phone: '+267 312 2222',
+        website: 'www.sos-botswana.org',
+      },
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'childrens village logo'
+    },
+     {
+      id: '6',
+      name: 'Masiela Trust Fund',
+      type: 'NGO',
+      location: 'Gaborone',
+      description: 'Masiela Trust Fund is a non-governmental organization dedicated to upholding the rights of the...',
+      services: ['Orphans & Vulnerable Children', 'Education', 'Health'],
+      contactInfo: {
+        phone: '+267 311 1111',
+        website: 'www.masiela.org',
+      },
+      logo: 'https://placehold.co/100x100.png',
+      logoHint: 'charity logo'
+    },
 ];
 
 export default function SupportDirectoryPage() {
+    const [currentPage, setCurrentPage] = useState(1);
+    const totalPages = 5;
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-muted/50">
       <Header />
       <main className="flex-grow">
-        <div className="container mx-auto px-4 py-12 md:py-20">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold font-headline">Support Directory</h1>
-            <p className="text-muted-foreground mt-2 max-w-2xl mx-auto">
-              Find support organizations near you. Search by keyword or filter by category to find the help you need.
-            </p>
+        <div className="container mx-auto px-4 py-12 md:py-16">
+          <div className="text-left mb-12">
+            <h1 className="text-3xl md:text-4xl font-bold font-headline">Service Providers Directory</h1>
           </div>
 
-          <Card className="mb-8">
-            <CardContent className="p-4 md:p-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="md:col-span-2 relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                  <Input placeholder="Search by organization name or keyword..." className="pl-10" />
-                </div>
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Filter by category" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Categories</SelectItem>
-                    <SelectItem value="food">Food Assistance</SelectItem>
-                    <SelectItem value="housing">Housing Support</SelectItem>
-                    <SelectItem value="employment">Employment</SelectItem>
-                    <SelectItem value="healthcare">Healthcare</SelectItem>
-                    <SelectItem value="childcare">Childcare</SelectItem>
-                    <SelectItem value="utilities">Utilities</SelectItem>
-                  </SelectContent>
-                </Select>
+          <div className="bg-background rounded-2xl shadow-md p-4 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                <Input placeholder="Name" className="md:col-span-1" />
+                <Input placeholder="Location" className="md:col-span-1" />
+                <Input placeholder="Services" className="md:col-span-1" />
+                <Button className="w-full">Search</Button>
               </div>
-            </CardContent>
-          </Card>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {organizations.map((org, index) => (
-              <Card key={index} className="flex flex-col">
-                <CardHeader>
-                  <CardTitle className="font-headline">{org.name}</CardTitle>
-                  <CardDescription>{org.category}</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-muted-foreground line-clamp-3">{org.description}</p>
-                </CardContent>
-                <CardFooter className="flex justify-between items-center">
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    <span>{org.location}</span>
-                  </div>
-                  <Button asChild variant="link" className="text-primary">
-                    <Link href="#">Learn More &rarr;</Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {organizations.map((org) => (
+              <ProviderCard key={org.id} provider={org} />
             ))}
           </div>
+
+          <div className="flex justify-center items-center mt-12">
+            <nav aria-label="Pagination">
+              <ul className="inline-flex items-center space-x-2">
+                <li>
+                  <Button variant="outline" size="sm" onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1}>Previous</Button>
+                </li>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                    <li key={page}>
+                    <Button
+                        variant={currentPage === page ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setCurrentPage(page)}
+                    >
+                        {page}
+                    </Button>
+                    </li>
+                ))}
+                <li>
+                  <Button variant="outline" size="sm" onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>Next</Button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
         </div>
       </main>
       <Footer />
