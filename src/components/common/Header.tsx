@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/support-directory', label: 'Directory' },
+  { href: '/campaigns', label: 'Campaigns' },
 ];
 
 export function Header() {
@@ -41,8 +42,8 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-                <SheetHeader className="sr-only">
-                  <SheetTitle>Mobile Menu</SheetTitle>
+                <SheetHeader>
+                  <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                 </SheetHeader>
               <div className="flex flex-col gap-6 p-6">
                 <Link href="/" className="flex items-center gap-2">
