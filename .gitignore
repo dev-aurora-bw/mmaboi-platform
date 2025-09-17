@@ -3,12 +3,16 @@
 # dependencies
 /node_modules
 /.pnp
+<<<<<<< HEAD
 .pnp.*
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+=======
+.pnp.js
+>>>>>>> 4aeedc9892b1f57c2b5aba609fa0bdf58c46ff86
 
 # testing
 /coverage
@@ -28,7 +32,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+<<<<<<< HEAD
 .pnpm-debug.log*
+=======
+
+# local env files
+.env*.local
+.env
+>>>>>>> 4aeedc9892b1f57c2b5aba609fa0bdf58c46ff86
 
 # vercel
 .vercel
@@ -36,6 +47,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+<<<<<<< HEAD
 
 .genkit/*
 .env*
@@ -43,3 +55,5 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+=======
+>>>>>>> 4aeedc9892b1f57c2b5aba609fa0bdf58c46ff86
